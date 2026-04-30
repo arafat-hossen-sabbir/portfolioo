@@ -81,6 +81,16 @@ export const education = [
       "Achieved strong academic performance with a solid foundation in science and mathematics, demonstrating consistency, discipline, and a strong ability to understand analytical and problem-solving concepts.",
     ],
   },
+  {
+    period: "2017 – 2018",
+    degree: "Primary School Certificate (PSC)",
+    institution: "Begum Sahanara Kindergarten",
+    details: [
+      "GPA: 5.00",
+      "Successfully completed primary education with excellent academic results.",
+      "Built a strong foundation in basic subjects and developed early interest in learning and creativity.",
+    ],
+  },
 ];
 
 export const experience = [
@@ -92,6 +102,16 @@ export const experience = [
       "Contributed to responsive user interface work with close attention to layout consistency across devices.",
       "Collaborated with designers and developers to turn requirements into reusable components and cleaner interaction flows.",
       "This entry is optional later: keep, edit, or remove the experience array to hide the section.",
+    ],
+  },
+  {
+    period: "2025",
+    role: "Junior Web Developer (Freelance)",
+    company: "Self-Employed",
+    details: [
+      "Developed and deployed small business and personal portfolio websites using modern web technologies.",
+      "Worked directly with clients to understand requirements and deliver responsive, user-friendly designs.",
+      "Improved performance and SEO basics while maintaining clean and scalable code structure.",
     ],
   },
 ];

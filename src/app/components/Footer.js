@@ -1,5 +1,6 @@
 "use client";
-import { personalInfo } from "../data";
+
+import { FaGithub, FaLinkedin, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   const handleNav = (e, href) => {
@@ -8,109 +9,109 @@ export default function Footer() {
   };
 
   return (
-    <footer
-      style={{
-        background: "var(--bg)",
-        borderTop: "1px solid var(--border)",
-        padding: "48px 24px",
-      }}
-    >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 24,
-          }}
-        >
-          {/* Logo */}
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              textDecoration: "none",
-            }}
-          >
-            <div
-              style={{
-                width: 36,
-                height: 36,
-                borderRadius: 8,
-                background: "rgba(255,255,255,0.05)",
-                backdropFilter: "blur(10px)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontFamily: "var(--font-plus-jakarta)",
-                fontWeight: 800,
-                color: "var(--text)",
-                fontSize: 16,
-                border: "1px solid rgba(255,255,255,0.1)",
-              }}
-            >
-              A
-            </div>
-            <span
-              style={{
-                fontFamily: "var(--font-plus-jakarta)",
-                fontWeight: 700,
-                fontSize: 17,
-                color: "var(--text)",
-              }}
-            >
-              Arafat Hossen Sabbir
-            </span>
-          </a>
+    <footer className="bg-[var(--bg)] text-slate-400 pt-16 pb-8 px-6 relative">
+      <div className="max-w-6xl mx-auto">
 
-          {/* Nav links */}
-          <div style={{ display: "flex", gap: 4, flexWrap: "wrap" }}>
+        {/* Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {/* Profile */}
+          <div>
+            <h2 className="text-white text-lg font-bold mb-2">
+              Arafat Hossen Sabbir
+            </h2>
+            <p className="text-emerald-400 mb-2 text-xs">
+              Junior Web Developer
+            </p>
+            <p className="text-xs leading-relaxed">
+              Passionate about building scalable web applications with clean
+              code and modern technologies.
+            </p>
+
+            {/* Social */}
+            <div className="flex gap-2 mt-4">
+              {[FaGithub, FaLinkedin, FaFacebookF].map((Icon, i) => (
+                <div
+                  key={i}
+                  className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 hover:bg-emerald-500 hover:text-white transition cursor-pointer"
+                >
+                  <Icon size={13} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm">LINKS</h4>
+            {["About", "Skills", "Projects", "Services", "Contact"].map(
+              (item) => (
+                <p
+                  key={item}
+                  onClick={(e) =>
+                    handleNav(e, `#${item.toLowerCase()}`)
+                  }
+                  className="text-xs mb-2 cursor-pointer hover:text-emerald-400 transition"
+                >
+                  {item}
+                </p>
+              )
+            )}
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm">SERVICES</h4>
             {[
-              { label: "About", href: "#about" },
-              { label: "Skills", href: "#skills" },
-              { label: "Works", href: "#projects" },
-              { label: "Contact", href: "#contact" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNav(e, link.href)}
-                style={{
-                  padding: "8px 14px",
-                  fontSize: 14,
-                  fontWeight: 500,
-                  color: "var(--text-muted)",
-                  textDecoration: "none",
-                  borderRadius: 8,
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.color = "var(--accent)";
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.color = "var(--text-muted)";
-                }}
-              >
-                {link.label}
-              </a>
+              "Web Development",
+              "API Development",
+              "Database Design",
+              "UI/UX Implementation",
+            ].map((service) => (
+              <p key={service} className="text-xs mb-2">
+                <span className="text-emerald-400 mr-1">•</span>
+                {service}
+              </p>
             ))}
           </div>
 
-          {/* Copyright */}
-          <p style={{ fontSize: 13, color: "var(--text-muted)" }}>
-            © {new Date().getFullYear()} All rights reserved by{" "}
-            <span style={{ color: "var(--accent)", fontWeight: 600 }}>
-              Arafat Hossen Sabbir
-            </span>
+          {/* Contact */}
+          <div>
+            <h4 className="text-white font-semibold mb-3 text-sm">CONTACT</h4>
+            <p className="text-xs mb-2">📧 ahsabbir476@gmail.com</p>
+            <p className="text-xs mb-2">📞 +880 1645-435656</p>
+            <p className="text-xs">📍 Dhaka, Bangladesh</p>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-white/10 mt-10 pt-5 flex flex-col sm:flex-row justify-between items-center text-xs">
+          <p>© 2026 Arafat Hossen Sabbir. All rights reserved.</p>
+          <p className="mt-2 sm:mt-0">
+            Developed with <span className="text-red-500">♥</span> by Sabbir
           </p>
         </div>
+      </div>
+
+      {/* Floating Buttons */}
+      <div className="fixed bottom-6 right-6 flex items-center gap-3 z-50">
+        <a
+          href="https://wa.me/8801645435656"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:scale-105 transition"
+        >
+          💬
+        </a>
+
+        <button
+          onClick={() =>
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }
+          className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg hover:scale-105 transition"
+        >
+          ↑
+        </button>
       </div>
     </footer>
   );
