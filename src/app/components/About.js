@@ -1,196 +1,93 @@
-'use client';
-import AnimateIn from './AnimateIn';
-import { personalInfo } from '../data';
+"use client";
+import AnimateIn from "./AnimateIn";
+import { personalInfo } from "../data";
 
 export default function About() {
   return (
     <section
       id="about"
-      style={{ padding: "100px 24px", background: "var(--bg-secondary)" }}
+      className="mesh-bg py-10 px-6 text-white relative overflow-hidden"
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+      <div className="max-w-6xl mx-auto">
+        {/* Heading */}
         <AnimateIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <span className="tag">About Me</span>
-            <h2
-              className="section-title"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", lineHeight: 1.2 }}
-            >
-              A personal intro with space for
-              <br />
+          <div className="text-center mb-16">
+            <span className="text-xs text-gray-400 tracking-widest uppercase">
+              About Me
+            </span>
+            <h2 className="text-3xl md:text-4xl font-semibold mt-3 leading-tight">
+              A personal intro with space for <br />
               both craft and character.
             </h2>
           </div>
         </AnimateIn>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 60,
-            alignItems: "start",
-          }}
-          className="about-grid"
-        >
+        {/* Grid */}
+        <div className="grid md:grid-cols-[380px_1fr] gap-14 items-center">
+          {/* LEFT CARD */}
           <AnimateIn direction="left">
-            <div
-              style={{
-                borderRadius: 20,
-                overflow: "hidden",
-                border: "1px solid rgba(99, 179, 237, 0.2)",
-                background: "var(--bg-card)",
-                padding: 40,
-                position: "relative",
-              }}
-            >
-              {/* Decorative accent */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: 4,
-                  background: "linear-gradient(90deg, #3b82f6, #06b6d4)",
-                }}
-              />
-
-              <div style={{ marginBottom: 24 }}>
-                <div
-                  style={{
-                    width: 56,
-                    height: 56,
-                    borderRadius: 16,
-                    background: "linear-gradient(135deg, #3b82f6, #06b6d4)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 24,
-                    marginBottom: 20,
-                    boxShadow: "0 8px 24px rgba(59, 130, 246, 0.35)",
-                  }}
-                >
-                  🚀
+            <div className="floating-card relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-lg p-7 flex flex-col items-center text-center">
+              {/* Avatar */}
+              <div className="relative mb-5">
+                <div className="w-40 h-40 rounded-full overflow-hidden border border-white/10">
+                  <img
+                    src="/arafathossensabbir.jpg"
+                    alt="Profile"
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-plus-jakarta)",
-                    fontWeight: 700,
-                    fontSize: 22,
-                    marginBottom: 8,
-                    color: "var(--text)",
-                  }}
-                >
-                  Frontend Developer
-                </h3>
-                <p
-                  style={{
-                    background: "linear-gradient(90deg, #3b82f6, #06b6d4)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    fontSize: 14,
-                    fontWeight: 600,
-                  }}
-                >
-                  Open to opportunities
-                </p>
               </div>
 
-              <div
-                style={{ display: "flex", flexDirection: "column", gap: 16 }}
-              >
+              <h3 className="text-lg font-medium">{personalInfo.name}</h3>
+
+              <p className="text-sm text-gray-400 mb-5">Junior Web Developer</p>
+
+              <div className="w-full h-px bg-white/10 mb-5"></div>
+
+              <div className="w-full space-y-2 text-left">
                 {[
-                  { icon: "📧", label: "Email", value: personalInfo.email },
-                  { icon: "📱", label: "Phone", value: personalInfo.phone },
-                  { icon: "📍", label: "Location", value: "Bangladesh" },
-                  { icon: "🌐", label: "Available", value: "Remote & Hybrid" },
+                  "Dhaka, Bangladesh",
+                  "B.Sc. in CSE, Premier University",
+                  "Laravel • Vue.js • PHP • MySQL",
                 ].map((item, i) => (
                   <div
                     key={i}
-                    style={{ display: "flex", alignItems: "center", gap: 12 }}
+                    className="text-sm text-gray-400 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/5"
                   >
-                    <span
-                      style={{
-                        fontSize: 20,
-                        width: 36,
-                        height: 36,
-                        borderRadius: 10,
-                        background: "rgba(59, 130, 246, 0.1)",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {item.icon}
-                    </span>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: 11,
-                          color: "#60a5fa",
-                          fontWeight: 600,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.08em",
-                        }}
-                      >
-                        {item.label}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: 14,
-                          color: "var(--text)",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {item.value}
-                      </div>
-                    </div>
+                    {item}
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-5 text-xs text-gray-300 flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                Open to opportunities
               </div>
             </div>
           </AnimateIn>
 
+          {/* RIGHT CONTENT */}
           <AnimateIn direction="right">
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            <div className="space-y-6">
               {[personalInfo.bio1, personalInfo.bio2, personalInfo.bio3].map(
                 (para, i) => (
                   <p
                     key={i}
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.8,
-                      color: i === 0 ? "var(--text)" : "var(--text-muted)",
-                      fontWeight: i === 0 ? 500 : 400,
-                    }}
+                    className={`text-[15px] leading-relaxed ${
+                      i === 0 ? "text-white" : "text-gray-400"
+                    }`}
                   >
                     {para}
                   </p>
                 ),
               )}
 
-              <div
-                style={{
-                  display: "flex",
-                  gap: 16,
-                  marginTop: 8,
-                  flexWrap: "wrap",
-                }}
-              >
+              <div className="flex flex-wrap gap-2 pt-2">
                 {["React", "Next.js", "Tailwind CSS", "Node.js", "MongoDB"].map(
                   (tech, i) => (
                     <span
                       key={i}
-                      style={{
-                        padding: "6px 14px",
-                        borderRadius: 999,
-                        background: "var(--accent-glow)",
-                        color: "var(--accent)",
-                        fontSize: 13,
-                        fontWeight: 600,
-                        border: "1px solid var(--accent)",
-                        opacity: 0.8,
-                      }}
+                      className="px-3 py-1 text-xs rounded-full border border-white/10 text-gray-300"
                     >
                       {tech}
                     </span>
@@ -202,9 +99,22 @@ export default function About() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          .about-grid { grid-template-columns: 1fr !important; }
+      {/* Floating Animation */}
+      <style jsx>{`
+        .floating-card {
+          animation: floatSmooth 5s ease-in-out infinite;
+        }
+
+        @keyframes floatSmooth {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-12px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
         }
       `}</style>
     </section>

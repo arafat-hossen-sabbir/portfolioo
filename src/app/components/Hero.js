@@ -446,7 +446,7 @@ export default function Hero() {
                   />
 
                   {/* Bottom two info cards */}
-                  
+
                 </div>
               </div>
 
