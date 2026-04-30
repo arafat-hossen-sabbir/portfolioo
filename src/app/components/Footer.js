@@ -103,15 +103,6 @@ export default function Footer() {
         >
           💬
         </a>
-
-        <button
-          onClick={() =>
-            window.scrollTo({ top: 0, behavior: "smooth" })
-          }
-          className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-lg hover:scale-105 transition"
-        >
-          ↑
-        </button>
       </div>
     </footer>
   );
