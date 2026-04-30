@@ -70,14 +70,14 @@ export default function Skills() {
         <AnimateIn>
           <div className="text-center mb-16">
             <span className="tag">Skills</span>
-            <h2 className="section-title text-[clamp(28px,3.5vw,44px)] leading-tight">
+            <h2 className="section-title text-[clamp(23px,3.5vw,44px)] leading-tight">
               A graphical skills layout
               <br />
               that stays readable.
             </h2>
             <p className="text-[var(--text-muted)] mt-4 max-w-md mx-auto text-sm">
               Clean, modern and scalable skill presentation using a consistent
-              design system.
+              and structured design system.
             </p>
           </div>
         </AnimateIn>

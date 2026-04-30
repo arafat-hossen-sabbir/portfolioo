@@ -9,12 +9,10 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[var(--bg)] text-slate-400 pt-16 pb-8 px-6 relative">
+    <footer className="bg-[var(--bg-secondary)] text-slate-400 pt-16 pb-8 px-6 relative">
       <div className="max-w-6xl mx-auto">
-
         {/* Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-
           {/* Profile */}
           <div>
             <h2 className="text-white text-lg font-bold mb-2">
@@ -48,14 +46,12 @@ export default function Footer() {
               (item) => (
                 <p
                   key={item}
-                  onClick={(e) =>
-                    handleNav(e, `#${item.toLowerCase()}`)
-                  }
+                  onClick={(e) => handleNav(e, `#${item.toLowerCase()}`)}
                   className="text-xs mb-2 cursor-pointer hover:text-emerald-400 transition"
                 >
                   {item}
                 </p>
-              )
+              ),
             )}
           </div>
 

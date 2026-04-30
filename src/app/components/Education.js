@@ -252,24 +252,24 @@ export default function Education() {
           <div style={{ textAlign: "center", marginBottom: 64 }}>
             <span className="tag">Resume</span>
             <h2
-              className="section-title"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", lineHeight: 1.2 }}
+              className="section-title mx-auto max-w-sm sm:max-w-xl md:max-w-2xl text-center"
+              style={{ fontSize: "clamp(23px, 5vw, 44px)", lineHeight: 1.25 }}
             >
-              Your academic foundation,
-              <br />
-              presented with useful detail.
+              Your academic foundation, presented with useful detail.
             </h2>
             <p
               style={{
                 color: "var(--text-muted)",
                 marginTop: 16,
-                maxWidth: 520,
+                maxWidth: 420,
                 margin: "16px auto 0",
                 fontSize: 14,
+                lineHeight: 1.6,
               }}
             >
-              Education and experience side by side — clean, readable, and
-              data-driven.
+              Education and experience side by side,
+              <br />
+              designed to be clean, readable, and data-driven.
             </p>
           </div>
         </AnimateIn>

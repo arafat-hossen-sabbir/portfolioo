@@ -15,9 +15,8 @@ export default function About() {
             <span className="text-xs text-gray-400 tracking-widest uppercase">
               About Me
             </span>
-            <h2 className="text-3xl md:text-4xl font-semibold mt-3 leading-tight">
-              A personal intro with space for <br />
-              both craft and character.
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mt-3 leading-snug max-w-xl md:max-w-2xl mx-auto text-center">
+              A personal intro with space for both craft and character.
             </h2>
           </div>
         </AnimateIn>
