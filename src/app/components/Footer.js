@@ -89,17 +89,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating Buttons */}
-      <div className="fixed bottom-6 right-6 flex items-center gap-3 z-50">
-        <a
-          href="https://wa.me/8801645435656"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:scale-105 transition"
-        >
-          💬
-        </a>
-      </div>
+      
     </footer>
   );
 }

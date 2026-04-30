@@ -65,11 +65,12 @@ export default function Contact() {
             <div>
               <div
                 style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.08)",
                   borderRadius: 20,
                   padding: 36,
                   marginBottom: 24,
+                  backdropFilter: "blur(10px)",
                 }}
               >
                 <div
@@ -77,8 +78,8 @@ export default function Contact() {
                     width: 60,
                     height: 60,
                     borderRadius: 16,
-                    background:
-                      "linear-gradient(135deg, var(--accent), #ec4899)",
+                    background: "rgba(255,255,255,0.05)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -94,26 +95,29 @@ export default function Contact() {
                     fontFamily: "var(--font-plus-jakarta)",
                     fontWeight: 700,
                     fontSize: 22,
-                    color: "var(--text)",
+                    color: "#ffffff",
                     marginBottom: 6,
+                    letterSpacing: "-0.2px",
                   }}
                 >
                   {personalInfo.name}
                 </h3>
+
                 <p
                   style={{
                     fontSize: 14,
-                    color: "var(--accent)",
+                    color: "#818cf8", // softer accent
                     fontWeight: 600,
                     marginBottom: 20,
                   }}
                 >
                   {personalInfo.role}
                 </p>
+
                 <p
                   style={{
-                    fontSize: 14,
-                    color: "var(--text-muted)",
+                    fontSize: 15,
+                    color: "rgba(255,255,255,0.7)",
                     lineHeight: 1.7,
                     marginBottom: 28,
                   }}
@@ -153,27 +157,28 @@ export default function Contact() {
                       alignItems: "center",
                       gap: 14,
                       padding: "12px 0",
-                      borderBottom: "1px solid var(--border)",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
                       textDecoration: "none",
-                      color: "var(--text)",
+                      color: "rgba(255,255,255,0.85)",
                       transition: "color 0.2s",
                       minWidth: 0,
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "var(--accent)";
+                      e.currentTarget.style.color = "#818cf8";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "var(--text)";
+                      e.currentTarget.style.color = "rgba(255,255,255,0.85)";
                     }}
                   >
                     <span style={{ fontSize: 20, flexShrink: 0 }}>
                       {c.icon}
                     </span>
+
                     <div style={{ minWidth: 0 }}>
                       <div
                         style={{
                           fontSize: 11,
-                          color: "var(--text-muted)",
+                          color: "rgba(255,255,255,0.5)",
                           fontWeight: 600,
                           textTransform: "uppercase",
                           letterSpacing: "0.06em",
@@ -181,6 +186,7 @@ export default function Contact() {
                       >
                         {c.label}
                       </div>
+
                       <div
                         style={{
                           fontSize: 14,

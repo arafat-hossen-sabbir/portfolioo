@@ -1,6 +1,53 @@
 "use client";
+import { useEffect, useState } from "react";
 import AnimateIn from "./AnimateIn";
 import { personalInfo } from "../data";
+
+const words = [
+  "Junior Web Developer",
+  "Arafat Hossen Sabbir"
+
+];
+
+function TypingText() {
+  const [displayed, setDisplayed] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = words[wordIndex];
+    let timeout;
+
+    if (!isDeleting) {
+      timeout = setTimeout(() => {
+        setDisplayed(current.substring(0, charIndex + 1));
+        setCharIndex((c) => c + 1);
+        if (charIndex + 1 === current.length) {
+          setTimeout(() => setIsDeleting(true), 1800);
+        }
+      }, 90);
+    } else {
+      timeout = setTimeout(() => {
+        setDisplayed(current.substring(0, charIndex - 1));
+        setCharIndex((c) => c - 1);
+        if (charIndex - 1 === 0) {
+          setIsDeleting(false);
+          setWordIndex((w) => (w + 1) % words.length);
+        }
+      }, 50);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, wordIndex]);
+
+  return (
+    <div className="flex items-center justify-center md:justify-start gap-2 text-2xl md:text-3xl text-center md:text-left">
+      <span className="text-gray-400 font-semibold">{displayed}</span>
+      <span className="inline-block w-[2px] h-[1.1em] bg-sky-400 animate-pulse" />
+    </div>
+  );
+}
 
 export default function About() {
   return (
@@ -68,6 +115,9 @@ export default function About() {
           {/* RIGHT CONTENT */}
           <AnimateIn direction="right">
             <div className="space-y-6">
+              {/* ✦ Typing Animation */}
+              <TypingText />
+
               {[personalInfo.bio1, personalInfo.bio2, personalInfo.bio3].map(
                 (para, i) => (
                   <p

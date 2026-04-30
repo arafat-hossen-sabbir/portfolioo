@@ -2,59 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import { personalInfo } from "../data";
 
-function CustomCursor() {
-  const cursorRef = useRef(null);
-  const dotRef = useRef(null);
-
-  useEffect(() => {
-    const move = (e) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
-      }
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
-      }
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
-  return (
-    <>
-      <div
-        ref={cursorRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 40,
-          height: 40,
-          borderRadius: "50%",
-          border: "1.5px solid var(--accent)",
-          pointerEvents: "none",
-          zIndex: 99999,
-          transition: "transform 0.12s ease",
-        }}
-      />
-      <div
-        ref={dotRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 8,
-          height: 8,
-          borderRadius: "50%",
-          background: "var(--accent)",
-          pointerEvents: "none",
-          zIndex: 99999,
-          transition: "transform 0.06s ease",
-        }}
-      />
-    </>
-  );
-}
-
 function ScrollToTop() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -140,7 +87,6 @@ export default function Hero() {
 
   return (
     <>
-      <CustomCursor />
       <ScrollToTop />
 
       <section
@@ -154,7 +100,6 @@ export default function Hero() {
           alignItems: "center",
           position: "relative",
           overflow: "hidden",
-          cursor: "none",
         }}
       >
         {/* Animated background orbs */}
