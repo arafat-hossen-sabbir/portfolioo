@@ -19,114 +19,41 @@ export default function Contact() {
     setForm({ name: "", email: "", subject: "", message: "" });
   };
 
-  const inputStyle = {
-    width: "100%",
-    padding: "14px 18px",
-    borderRadius: 10,
-    border: "1.5px solid var(--border)",
-    background: "var(--bg)",
-    color: "var(--text)",
-    fontSize: 14,
-    fontFamily: "var(--font-inter)",
-    outline: "none",
-    transition: "border-color 0.2s, box-shadow 0.2s",
-    boxSizing: "border-box",
-  };
-
-  const handleFocus = (e) => {
-    e.target.style.borderColor = "var(--accent)";
-    e.target.style.boxShadow = "0 0 0 3px var(--accent-glow)";
-  };
-  const handleBlur = (e) => {
-    e.target.style.borderColor = "var(--border)";
-    e.target.style.boxShadow = "none";
-  };
-
   return (
-    <section
-      id="contact"
-      style={{ padding: "50px 24px", background: "var(--bg)" }}
-    >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <AnimateIn>
-          <div style={{ textAlign: "center", marginBottom: 60 }}>
-            <span className="tag">Contact</span>
-            <h2
-              className="section-title"
-              style={{ fontSize: "clamp(28px, 3.5vw, 44px)", lineHeight: 1.2 }}
-            >
-              Let's work together
-            </h2>
-          </div>
-        </AnimateIn>
+    <section id="contact" className="py-14 px-4 bg-[var(--bg)]">
+      <div className="max-w-6xl mx-auto">
+        {/* HEADER */}
+        <div className="text-center mb-14">
+          <span className="tag">Contact</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-2">
+            Let's work together
+          </h2>
+        </div>
 
-        <div className="contact-grid">
-          <AnimateIn direction="left">
-            <div>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 20,
-                  padding: 36,
-                  marginBottom: 24,
-                  backdropFilter: "blur(10px)",
-                }}
-              >
-                <div
-                  style={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: 16,
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 26,
-                    marginBottom: 20,
-                  }}
-                >
-                  ✉️
-                </div>
+        {/* GRID */}
+        <div className="grid md:grid-cols-[1fr_1.4fr] gap-8 items-stretch">
+          {/* LEFT */}
+          <div className="flex flex-col h-full">
+            {/* CONTACT CARD */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur mb-6">
+              <div className="w-14 h-14 rounded-xl bg-white/10 flex items-center justify-center text-2xl mb-4">
+                ✉️
+              </div>
 
-                <h3
-                  style={{
-                    fontFamily: "var(--font-plus-jakarta)",
-                    fontWeight: 700,
-                    fontSize: 22,
-                    color: "#ffffff",
-                    marginBottom: 6,
-                    letterSpacing: "-0.2px",
-                  }}
-                >
-                  {personalInfo.name}
-                </h3>
+              <h3 className="text-xl font-bold text-white">
+                {personalInfo.name}
+              </h3>
 
-                <p
-                  style={{
-                    fontSize: 14,
-                    color: "#818cf8", // softer accent
-                    fontWeight: 600,
-                    marginBottom: 20,
-                  }}
-                >
-                  {personalInfo.role}
-                </p>
+              <p className="text-indigo-400 text-sm mb-4">
+                {personalInfo.role}
+              </p>
 
-                <p
-                  style={{
-                    fontSize: 15,
-                    color: "rgba(255,255,255,0.7)",
-                    lineHeight: 1.7,
-                    marginBottom: 28,
-                  }}
-                >
-                  I'm a skilled Frontend developer specializing in building
-                  dynamic and responsive web applications using React, Next.js &
-                  Tailwind CSS.
-                </p>
+              <p className="text-sm text-white/70 mb-6">
+                I'm a skilled Frontend developer specializing in React, Next.js
+                & Tailwind CSS.
+              </p>
 
+              <div className="space-y-3">
                 {[
                   {
                     icon: "📞",
@@ -152,262 +79,117 @@ export default function Contact() {
                     href={c.href}
                     target={c.href.startsWith("http") ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 14,
-                      padding: "12px 0",
-                      borderBottom: "1px solid rgba(255,255,255,0.08)",
-                      textDecoration: "none",
-                      color: "rgba(255,255,255,0.85)",
-                      transition: "color 0.2s",
-                      minWidth: 0,
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#818cf8";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "rgba(255,255,255,0.85)";
-                    }}
+                    className="flex items-center gap-3 border-b border-white/10 pb-2 text-white/80 hover:text-indigo-400 transition"
                   >
-                    <span style={{ fontSize: 20, flexShrink: 0 }}>
-                      {c.icon}
-                    </span>
-
-                    <div style={{ minWidth: 0 }}>
-                      <div
-                        style={{
-                          fontSize: 11,
-                          color: "rgba(255,255,255,0.5)",
-                          fontWeight: 600,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.06em",
-                        }}
-                      >
+                    <span>{c.icon}</span>
+                    <div>
+                      <div className="text-[10px] uppercase opacity-50">
                         {c.label}
                       </div>
-
-                      <div
-                        style={{
-                          fontSize: 14,
-                          fontWeight: 500,
-                          wordBreak: "break-word",
-                        }}
-                      >
-                        {c.value}
-                      </div>
+                      <div className="text-sm">{c.value}</div>
                     </div>
                   </a>
                 ))}
               </div>
+            </div>
 
-              <div
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid var(--border)",
-                  borderRadius: 16,
-                  padding: "20px 28px",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "var(--text-muted)",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    marginBottom: 14,
-                  }}
-                >
-                  Find Me In
-                </p>
-                <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-                  {[
-                    {
-                      label: "GitHub",
-                      href: personalInfo.social.github,
-                      color: "#333",
-                    },
-                    {
-                      label: "LinkedIn",
-                      href: personalInfo.social.linkedin,
-                      color: "#0a66c2",
-                    },
-                    {
-                      label: "Twitter",
-                      href: personalInfo.social.twitter,
-                      color: "#1da1f2",
-                    },
-                    {
-                      label: "Fiverr",
-                      href: personalInfo.fiverr,
-                      color: "#1dbf73",
-                    },
-                  ].map((s, i) => (
-                    <a
-                      key={i}
-                      href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        padding: "8px 18px",
-                        borderRadius: 8,
-                        border: "1px solid var(--border)",
-                        fontSize: 13,
-                        fontWeight: 600,
-                        color: "var(--text)",
-                        textDecoration: "none",
-                        transition: "all 0.2s",
-                        background: "var(--bg)",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.borderColor = s.color;
-                        e.target.style.color = s.color;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.borderColor = "var(--border)";
-                        e.target.style.color = "var(--text)";
-                      }}
-                    >
-                      {s.label}
-                    </a>
-                  ))}
-                </div>
+            {/* ✅ FIND ME IN (CENTERED FIX) */}
+            <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-xl p-5 mt-6 md:mt-auto text-center flex flex-col items-center">
+              <p className="text-xs uppercase tracking-wider mb-4 text-[var(--text-muted)] font-semibold">
+                Find Me In
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { label: "GitHub", href: personalInfo.social.github },
+                  { label: "LinkedIn", href: personalInfo.social.linkedin },
+                  { label: "Twitter", href: personalInfo.social.twitter },
+                ].map((s, i) => (
+                  <a
+                    key={i}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-md border border-[var(--border)] text-sm font-medium hover:text-indigo-400 hover:border-indigo-400 transition"
+                  >
+                    {s.label}
+                  </a>
+                ))}
               </div>
             </div>
-          </AnimateIn>
+          </div>
 
-          <AnimateIn direction="right">
-            <div
-              style={{
-                background: "var(--bg-card)",
-                border: "1px solid var(--border)",
-                borderRadius: 20,
-                padding: 40,
-              }}
-            >
-              <h3
-                style={{
-                  fontFamily: "var(--font-plus-jakarta)",
-                  fontWeight: 700,
-                  fontSize: 22,
-                  color: "var(--text)",
-                  marginBottom: 28,
-                }}
+          {/* RIGHT */}
+          <div className="bg-[var(--bg-card)] border border-[var(--border)] rounded-2xl p-8 h-full">
+            <h3 className="text-xl font-bold mb-6">Send A Message</h3>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  className="input"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  className="input"
+                />
+              </div>
+
+              <input
+                type="text"
+                placeholder="Subject"
+                required
+                value={form.subject}
+                onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                className="input"
+              />
+
+              <textarea
+                rows={5}
+                placeholder="Message"
+                required
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                className="input resize-none"
+              />
+
+              <button
+                type="submit"
+                className={`w-full py-3 rounded-lg font-semibold transition ${
+                  sent ? "bg-green-500" : "bg-[var(--accent)] hover:opacity-90"
+                } text-white`}
               >
-                Send A Message
-              </h3>
-
-              <form onSubmit={handleSubmit}>
-                <div className="form-name-email">
-                  <input
-                    type="text"
-                    placeholder="Your Name"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    style={inputStyle}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    required
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm({ ...form, email: e.target.value })
-                    }
-                    style={inputStyle}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </div>
-
-                <div style={{ marginBottom: 16 }}>
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    required
-                    value={form.subject}
-                    onChange={(e) =>
-                      setForm({ ...form, subject: e.target.value })
-                    }
-                    style={inputStyle}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </div>
-
-                <div style={{ marginBottom: 24 }}>
-                  <textarea
-                    placeholder="Message"
-                    required
-                    rows={6}
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm({ ...form, message: e.target.value })
-                    }
-                    style={{ ...inputStyle, resize: "vertical" }}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  style={{
-                    width: "100%",
-                    padding: "15px",
-                    borderRadius: 10,
-                    background: sent ? "#10b981" : "var(--accent)",
-                    color: "#fff",
-                    fontWeight: 700,
-                    fontSize: 15,
-                    border: "none",
-                    cursor: "pointer",
-                    fontFamily: "var(--font-plus-jakarta)",
-                    transition: "all 0.3s",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 8,
-                  }}
-                >
-                  {sent ? "✓ Message Sent!" : "Send Message"}
-                </button>
-              </form>
-            </div>
-          </AnimateIn>
+                {sent ? "✓ Message Sent!" : "Send Message"}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
 
-      <style>{`
-        .contact-grid {
-          display: grid;
-          grid-template-columns: 1fr 1.4fr;
-          gap: 48px;
-          align-items: start;
+      <style jsx>{`
+        .input {
+          width: 100%;
+          padding: 12px 14px;
+          border-radius: 10px;
+          border: 1px solid var(--border);
+          background: var(--bg);
+          color: var(--text);
+          font-size: 14px;
+          outline: none;
+          transition: 0.2s;
         }
 
-        .form-name-email {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 16px;
-          margin-bottom: 16px;
-        }
-
-        @media (max-width: 768px) {
-          #contact {
-            padding: 60px 16px;
-          }
-          .contact-grid {
-            grid-template-columns: 1fr;
-            gap: 24px;
-          }
-          .form-name-email {
-            grid-template-columns: 1fr;
-          }
+        .input:focus {
+          border-color: var(--accent);
+          box-shadow: 0 0 0 3px var(--accent-glow);
         }
       `}</style>
     </section>
