@@ -27,8 +27,18 @@ export default function Contact() {
           <span className="text-[13px] text-gray-400 tracking-widest uppercase mb-2">
             contact
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold mt-2">
-            Let's work together
+          <h2
+            style={{
+              fontFamily: "var(--font-plus-jakarta)",
+              fontWeight: 800,
+              fontSize: "clamp(24px, 5vw, 44px)",
+              lineHeight: 1.2,
+              color: "var(--text)",
+              marginBottom: 0,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Let’s work together and <br /> bring your ideas to life
           </h2>
         </div>
 
