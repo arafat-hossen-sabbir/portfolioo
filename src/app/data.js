@@ -1,7 +1,7 @@
 // Central data file - edit this to update your portfolio content
 
 export const personalInfo = {
-  name: "Arafat Hossen",
+  name: "Arafat Hossen Sabbir",
   role: "Frontend Developer",
   tagline:
     "Designing Clear,\nResponsive Web\nExperiences With\nRoom For Personality.",
@@ -11,7 +11,6 @@ export const personalInfo = {
   email: "arafathossensabbirofficial@gmail.com",
   phone: "+8801645435656",
   whatsapp: "+8801645435656",
-  fiverr: "https://www.fiverr.com/sellers/pro_sammo/edit",
   social: {
     github: "https://github.com/arafat-hossen-sabbir",
     linkedin: "https://www.linkedin.com/in/arafat-hossen-sabbir/",

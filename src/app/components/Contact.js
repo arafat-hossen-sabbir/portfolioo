@@ -24,7 +24,9 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}
         <div className="text-center mb-14">
-          <span className="tag">Contact</span>
+          <span className="text-[13px] text-gray-400 tracking-widest uppercase mb-2">
+            contact
+          </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2">
             Let's work together
           </h2>

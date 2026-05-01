@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // এটা add করতে হবে
+  output: "export", 
   images: {
-    unoptimized: true, // static export এর জন্য দরকার
+    unoptimized: true,
     domains: [],
   },
 };

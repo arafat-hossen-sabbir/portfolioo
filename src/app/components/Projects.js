@@ -18,7 +18,9 @@ export default function Projects() {
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <AnimateIn>
           <div style={{ textAlign: "center", marginBottom: 48 }}>
-            <span className="tag">Works</span>
+            <span className="text-[13px] text-gray-400 tracking-widest uppercase mb-2">
+              Projects
+            </span>
             <h2
               className="section-title mx-auto text-center max-w-[320px] sm:max-w-xl md:max-w-2xl"
               style={{ fontSize: "clamp(23px, 5vw, 44px)", lineHeight: 1.25 }}

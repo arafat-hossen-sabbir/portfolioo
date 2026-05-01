@@ -250,7 +250,9 @@ export default function Education() {
         {/* Heading */}
         <AnimateIn>
           <div style={{ textAlign: "center", marginBottom: 64 }}>
-            <span className="tag">Resume</span>
+            <span className="text-xs text-gray-400 tracking-widest uppercase mb-2">
+              Education
+            </span>
             <h2
               className="section-title mx-auto max-w-sm sm:max-w-xl md:max-w-2xl text-center"
               style={{ fontSize: "clamp(23px, 5vw, 44px)", lineHeight: 1.25 }}

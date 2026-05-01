@@ -4,14 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import AnimateIn from "./AnimateIn";
 import { skills } from "../data";
 
-const ACCENTS = [
-  "rgba(99,153,34,0.5)",
-  "rgba(55,138,221,0.45)",
-  "rgba(186,117,23,0.45)",
-  "rgba(160,107,200,0.4)",
-  "rgba(29,158,117,0.4)",
-  "rgba(210,83,126,0.4)",
-];
 
 const BAR_COLORS = [
   "rgba(99,153,34,0.65)",
@@ -69,7 +61,9 @@ export default function Skills() {
         {/* Heading */}
         <AnimateIn>
           <div className="text-center mb-16">
-            <span className="tag">Skills</span>
+            <span className="text-[13px] text-gray-400 tracking-widest uppercase mb-2">
+              skills
+            </span>
             <h2 className="section-title text-[clamp(23px,3.5vw,44px)] leading-tight">
               A graphical skills layout
               <br />
@@ -98,7 +92,7 @@ export default function Skills() {
                 <div
                   className="absolute top-0 left-0 right-0 h-[2px]"
                   style={{
-                    background: `linear-gradient(90deg, ${ACCENTS[gi % ACCENTS.length]}, transparent)`,
+                    background: `linear-gradient(90deg, transparent)`,
                   }}
                 />
 
