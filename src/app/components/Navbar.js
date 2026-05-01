@@ -72,22 +72,30 @@ export default function Navbar() {
         >
           <div
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: 8,
+              width: 40,
+              height: 40,
+              borderRadius: 10, // square but slightly rounded (modern look)
+              overflow: "hidden",
               background: "rgba(255,255,255,0.05)",
               backdropFilter: "blur(10px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontFamily: "var(--font-plus-jakarta)",
-              fontWeight: 800,
-              color: "var(--text)",
-              fontSize: 16,
               border: "1px solid rgba(255,255,255,0.1)",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.25)",
+              transition: "all 0.3s ease",
             }}
           >
-            A
+            <img
+              src="/arafathossensabbir.jpg"
+              alt="Profile"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "top",
+              }}
+            />
           </div>
         </a>
 
@@ -203,12 +211,14 @@ export default function Navbar() {
       {menuOpen && (
         <div
           style={{
-            background: "var(--bg)",
-            borderTop: "1px solid var(--border)",
-            padding: "16px 24px",
+            background: "rgba(20, 20, 20, 0.6)", // transparent bg
+            backdropFilter: "blur(16px)", // glass effect
+            WebkitBackdropFilter: "blur(16px)",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            padding: "16px 20px",
             display: "flex",
             flexDirection: "column",
-            gap: 4,
+            gap: 8,
           }}
         >
           {navLinks.map((link) => (
@@ -222,27 +232,45 @@ export default function Navbar() {
                 fontWeight: 500,
                 color: "var(--text)",
                 textDecoration: "none",
-                borderRadius: 8,
-                background: "var(--bg-card)",
-                marginBottom: 4,
+                borderRadius: 10,
+                background: "rgba(255,255,255,0.05)", // transparent card
+                border: "1px solid rgba(255,255,255,0.08)",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                e.currentTarget.style.transform = "translateX(4px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                e.currentTarget.style.transform = "translateX(0)";
               }}
             >
               {link.label}
             </a>
           ))}
+
           <a
             href="#contact"
             onClick={(e) => handleNav(e, "#contact")}
             style={{
               padding: "12px 16px",
-              borderRadius: 8,
-              background: "var(--accent)",
+              borderRadius: 10,
+              background: "linear-gradient(135deg, #6C63FF, #8B5CF6)", // gradient button
               color: "#fff",
               fontWeight: 600,
               fontSize: 15,
               textDecoration: "none",
               textAlign: "center",
-              marginTop: 8,
+              marginTop: 10,
+              boxShadow: "0 6px 20px rgba(108,99,255,0.4)",
+              transition: "all 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.03)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             Hire Me!
