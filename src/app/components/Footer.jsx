@@ -11,7 +11,6 @@ export default function Footer() {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
-
   useEffect(() => {
     const footer = footerRef.current;
     if (!footer) return;
@@ -28,7 +27,7 @@ export default function Footer() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     observer.observe(footer);
@@ -101,7 +100,7 @@ export default function Footer() {
                 >
                   {item}
                 </p>
-              )
+              ),
             )}
           </div>
 
