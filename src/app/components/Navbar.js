@@ -1,35 +1,35 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { useTheme } from './ThemeProvider';
+"use client";
+import { useState, useEffect } from "react";
+import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
-  { label: 'About Me', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Resume', href: '#education' },
-  { label: 'Testimonials', href: '#experience' },
-  { label: 'Works', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: "About Me", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Resume", href: "#education" },
+  { label: "Testimonials", href: "#experience" },
+  { label: "Works", href: "#projects" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 30);
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleNav = (e, href) => {
     e.preventDefault();
     setMenuOpen(false);
     const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) target.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -74,7 +74,7 @@ export default function Navbar() {
             style={{
               width: 40,
               height: 40,
-              borderRadius: 10, // square but slightly rounded (modern look)
+              borderRadius: 10,
               overflow: "hidden",
               background: "rgba(255,255,255,0.05)",
               backdropFilter: "blur(10px)",
@@ -84,6 +84,7 @@ export default function Navbar() {
               border: "1px solid rgba(255,255,255,0.1)",
               boxShadow: "0 4px 10px rgba(0,0,0,0.25)",
               transition: "all 0.3s ease",
+              flexShrink: 0,
             }}
           >
             <img
@@ -97,6 +98,12 @@ export default function Navbar() {
               }}
             />
           </div>
+          <h2
+            className="footer-name-shimmer"
+            style={{ fontSize: 16, fontWeight: 900, margin: 0, lineHeight: 1 }}
+          >
+            Arafat Hossen Sabbir
+          </h2>
         </a>
 
         {/* Desktop Nav */}
@@ -163,25 +170,29 @@ export default function Navbar() {
             style={{
               padding: "10px 22px",
               borderRadius: 8,
-              background: "var(--accent)",
-              color: "#fff",
+              background: "rgba(129, 140, 248, 0.15)",
+              color: "rgba(255,255,255,0.9)",
               fontWeight: 600,
               fontSize: 14,
               textDecoration: "none",
-              transition: "opacity 0.2s, transform 0.2s",
               fontFamily: "var(--font-plus-jakarta)",
+              border: "none",
+              transition: "all 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.target.style.opacity = "0.9";
-              e.target.style.transform = "translateY(-1px)";
+              e.currentTarget.style.background = "rgba(129, 140, 248, 0.3)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 20px rgba(129, 140, 248, 0.2)";
             }}
             onMouseLeave={(e) => {
-              e.target.style.opacity = "1";
-              e.target.style.transform = "translateY(0)";
+              e.currentTarget.style.background = "rgba(129, 140, 248, 0.15)";
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "none";
             }}
             className="hidden-mobile"
           >
-            Hire Me!
+            Hire Me
           </a>
 
           {/* Mobile menu */}

@@ -49,16 +49,15 @@
 .footer-name-shimmer {
   background: linear-gradient(
     90deg,
-    #ffffff 0%,
-    #34d399 40%,
-    #ffffff 60%,
-    #ffffff 100%
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(129, 140, 248, 0.8) 50%,
+    rgba(255, 255, 255, 0.95) 100%
   );
-  background-size: 200% auto;
+  background-size: 300% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: footer-shimmer 3.5s linear infinite;
+  animation: footer-shimmer 8s ease-in-out infinite;
 }
 
 /* Social icons */

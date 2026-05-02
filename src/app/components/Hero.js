@@ -141,7 +141,7 @@ export default function Hero() {
         className="mesh-bg"
         style={{
           minHeight: "100vh",
-          paddingTop: 70,
+          paddingTop: 30,
           display: "flex",
           alignItems: "center",
           position: "relative",
