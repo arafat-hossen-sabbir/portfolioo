@@ -5,7 +5,7 @@ const ThemeContext = createContext({ theme: "dark" });
 
 export function ThemeProvider({ children }) {
   useEffect(() => {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.add("dark"); //nothing
   }, []);
 
   return (
